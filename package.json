@@ -1,0 +1,17 @@
+{
+  "name": "vectornews",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:web": "npm --workspace @vectornews/web run dev",
+    "dev:api": "npm --workspace @vectornews/api run dev",
+    "build": "npm run build --workspaces",
+    "lint": "npm run lint --workspaces",
+    "typecheck": "npm run typecheck --workspaces",
+    "seed:admin": "tsx scripts/seed-firestore-admin.ts"
+  }
+}

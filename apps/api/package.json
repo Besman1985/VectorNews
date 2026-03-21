@@ -1,0 +1,11 @@
+{
+  "name": "@vectornews/api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "python server.py",
+    "build": "node -e \"console.log('Python API does not require a build step.')\"",
+    "lint": "node -e \"console.log('Python API lint is not configured in npm scripts.')\"",
+    "typecheck": "node -e \"console.log('Python API typecheck is not configured in npm scripts.')\""
+  }
+}
