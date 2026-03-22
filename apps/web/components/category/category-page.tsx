@@ -15,7 +15,7 @@ export async function CategoryPage({ slug }: { slug: string }) {
     <main className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
       <section className="rounded-[36px] border border-white/10 bg-[linear-gradient(135deg,rgba(216,183,104,0.14),rgba(15,23,42,0.9))] p-8">
         <p className="text-sm uppercase tracking-[0.3em] text-gold">{category.name}</p>
-        <h1 className="mt-4 text-5xl font-semibold text-white">{category.description}</h1>
+        <h1 className="heading-page mt-4 font-semibold text-white">{category.description}</h1>
       </section>
       <section className="mt-8 grid gap-5">
         {articles.map((article) => (

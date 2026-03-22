@@ -129,7 +129,7 @@ export function ArticleBody({ article }: { article: NewsArticle }) {
               <span>{article.categoryName}</span>
               <span className="text-mist">{formatDate(article.publishedAt)}</span>
             </div>
-            <h1 className="max-w-4xl text-5xl font-semibold leading-tight text-white">
+            <h1 className="heading-display max-w-4xl font-semibold text-white">
               {article.title}
             </h1>
             <div className="flex flex-wrap items-center gap-4 text-sm text-mist">
@@ -149,7 +149,7 @@ export function ArticleBody({ article }: { article: NewsArticle }) {
                   {paragraph}
                 </p>
               ) : (
-                <h2 key={paragraph} className="text-2xl font-semibold leading-tight tracking-wide text-white">
+                <h2 key={paragraph} className="heading-section font-semibold tracking-wide text-white">
                   {paragraph}
                 </h2>
               )
@@ -214,7 +214,7 @@ export function ArticleBody({ article }: { article: NewsArticle }) {
 
       <section className="mt-8 grid gap-8 lg:grid-cols-[1fr_0.9fr]">
         <div className="rounded-[30px] border border-white/10 bg-white/5 p-6">
-          <h2 className="text-2xl font-semibold text-white">Комментарии</h2>
+          <h2 className="heading-section font-semibold text-white">Комментарии</h2>
           <div className="mt-6 space-y-4">
             {comments.map((comment) => (
               <div key={comment.id} className="rounded-3xl border border-white/10 bg-[#0d1426] p-4">
@@ -275,7 +275,7 @@ export function ArticleBody({ article }: { article: NewsArticle }) {
         </div>
 
         <div className="rounded-[30px] border border-white/10 bg-[#0d1426] p-6">
-          <h2 className="text-2xl font-semibold text-white">Похожие новости</h2>
+          <h2 className="heading-section font-semibold text-white">Похожие новости</h2>
           <div className="mt-6 grid gap-4">
             {related.map((item) => (
               <Link
@@ -284,7 +284,7 @@ export function ArticleBody({ article }: { article: NewsArticle }) {
                 className="rounded-[24px] border border-white/10 bg-white/5 p-4 transition hover:border-gold/50"
               >
                 <p className="text-xs uppercase tracking-[0.25em] text-gold">{item.categoryName}</p>
-                <h3 className="mt-2 text-lg font-semibold text-white">{item.title}</h3>
+                <h3 className="heading-card mt-2 font-semibold text-white">{item.title}</h3>
                 <p className="mt-2 text-sm text-slate-300">{item.excerpt}</p>
               </Link>
             ))}

@@ -52,7 +52,7 @@ export function MarketOverviewTabs({ overview }: { overview: MarketOverview }) {
       <div className="flex items-start justify-between gap-4">
         <div>
           <p className="text-xs uppercase tracking-[0.28em] text-gold">Рынки</p>
-          <h2 className="mt-3 text-2xl font-semibold text-white">
+          <h2 className="heading-section mt-3 font-semibold text-white">
             Курсы валют, индексов и криптовалют
           </h2>
         </div>

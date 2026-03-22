@@ -100,7 +100,7 @@ export function AuthPage({ mode }: { mode: AuthMode }) {
           <p className="text-sm uppercase tracking-[0.32em] text-gold">
             {isRegister ? "Регистрация" : "Вход"}
           </p>
-          <h1 className="mt-5 max-w-xl text-4xl font-semibold text-white">
+          <h1 className="heading-page mt-5 max-w-xl font-semibold text-white">
             {isRegister
               ? "Создайте личный кабинет VectorNews"
               : "Войдите в личный кабинет VectorNews"}

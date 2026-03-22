@@ -191,7 +191,7 @@ export function AdminDashboard({
       <section className="flex items-center justify-between gap-4">
         <div>
           <p className="text-sm uppercase tracking-[0.3em] text-gold">CMS с авторизацией</p>
-          <h1 className="mt-3 text-4xl font-semibold text-white">Редакционная панель</h1>
+          <h1 className="heading-page mt-3 font-semibold text-white">Редакционная панель</h1>
         </div>
         <button
           type="button"
@@ -213,7 +213,7 @@ export function AdminDashboard({
           <div className="mb-6 flex flex-col gap-5">
             <div>
               <p className="text-sm uppercase tracking-[0.3em] text-gold">Публикация</p>
-              <h2 className="mt-3 text-3xl font-semibold text-white">
+              <h2 className="heading-section mt-3 font-semibold text-white">
                 {editingSlug ? "Редактирование статьи" : "Публикация новости"}
               </h2>
             </div>
@@ -328,12 +328,12 @@ export function AdminDashboard({
         </div>
 
         <div className="rounded-[32px] border border-white/10 bg-[#0d1426] p-6">
-          <h2 className="text-2xl font-semibold text-white">Последние материалы</h2>
+          <h2 className="heading-section font-semibold text-white">Последние материалы</h2>
           <div className="mt-6 grid gap-4">
             {articles.map((article) => (
               <div key={article.id} className="rounded-[24px] border border-white/10 bg-white/5 p-4">
                 <p className="text-xs uppercase tracking-[0.24em] text-gold">{article.categoryName}</p>
-                <h3 className="mt-2 text-lg font-semibold text-white">{article.title}</h3>
+                <h3 className="heading-card mt-2 font-semibold text-white">{article.title}</h3>
                 <p className="mt-2 text-sm text-slate-300">{article.views.toLocaleString("ru-RU")} просмотров</p>
               </div>
             ))}

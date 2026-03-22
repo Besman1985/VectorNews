@@ -35,7 +35,7 @@ export function ArticleCard({
             <span>{article.categoryName}</span>
             <span className="text-mist">{formatDate(article.publishedAt)}</span>
           </div>
-          <h3 className="text-2xl font-semibold text-white">{article.title}</h3>
+          <h3 className="heading-card font-semibold text-white">{article.title}</h3>
           <p className="text-sm leading-7 text-slate-300">{article.excerpt}</p>
           <div className="flex flex-wrap gap-4 text-sm text-mist">
             <span>{minutesToReadLabel(article.readingTime)}</span>

@@ -7,7 +7,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 lg:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
         <div className="space-y-4">
           <p className="text-sm uppercase tracking-[0.3em] text-gold">VectorNews</p>
-          <h2 className="max-w-md text-3xl font-semibold text-white">
+          <h2 className="heading-section max-w-md font-semibold text-white">
             Международная редакция с фокусом на скорость, ясность и сильный визуальный контекст.
           </h2>
         </div>

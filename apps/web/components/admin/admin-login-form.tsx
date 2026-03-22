@@ -40,7 +40,7 @@ export function AdminLoginForm() {
     <main className="mx-auto flex min-h-[70vh] max-w-7xl items-center justify-center px-4 py-10 lg:px-8">
       <section className="w-full max-w-md rounded-[32px] border border-white/10 bg-white/5 p-8">
         <p className="text-sm uppercase tracking-[0.3em] text-gold">Доступ администратора</p>
-        <h1 className="mt-4 text-4xl font-semibold text-white">Вход в редакционную панель</h1>
+        <h1 className="heading-page mt-4 font-semibold text-white">Вход в редакционную панель</h1>
         <form className="mt-8 grid gap-4" onSubmit={handleSubmit}>
           <input
             name="email"

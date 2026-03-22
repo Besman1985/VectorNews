@@ -15,7 +15,7 @@ export async function AuthorPage({ slug }: { slug: string }) {
     <main className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
       <section className="rounded-[36px] border border-white/10 bg-white/5 p-8">
         <p className="text-sm uppercase tracking-[0.3em] text-gold">{author.role}</p>
-        <h1 className="mt-4 text-5xl font-semibold text-white">{author.name}</h1>
+        <h1 className="heading-page mt-4 font-semibold text-white">{author.name}</h1>
         <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">{author.bio}</p>
       </section>
       <section className="mt-8 grid gap-5">

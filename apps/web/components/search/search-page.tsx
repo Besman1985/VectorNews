@@ -9,7 +9,7 @@ export async function SearchPage({ query }: { query?: string }) {
     <main className="mx-auto max-w-7xl px-4 py-8 lg:px-8">
       <section className="rounded-[36px] border border-white/10 bg-white/5 p-8">
         <p className="text-sm uppercase tracking-[0.3em] text-gold">Поиск</p>
-        <h1 className="mt-4 text-5xl font-semibold text-white">Быстрый поиск по новостям</h1>
+        <h1 className="heading-page mt-4 font-semibold text-white">Быстрый поиск по новостям</h1>
         <form className="mt-6">
           <input
             name="q"

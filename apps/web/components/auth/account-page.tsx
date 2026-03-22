@@ -30,7 +30,7 @@ export function AccountPage({
       <section className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
         <div className="rounded-[34px] border border-white/10 bg-[linear-gradient(135deg,rgba(216,183,104,0.18),rgba(10,16,32,0.9))] p-8">
           <p className="text-sm uppercase tracking-[0.28em] text-gold">Личный кабинет</p>
-          <h1 className="mt-4 text-4xl font-semibold text-white">
+          <h1 className="heading-page mt-4 font-semibold text-white">
             {initialUser.name || initialUser.email}
           </h1>
           <p className="mt-4 text-base leading-8 text-slate-300">

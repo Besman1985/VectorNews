@@ -19,7 +19,7 @@ export async function HomePage() {
         <section className="rounded-[36px] border border-white/10 bg-[linear-gradient(135deg,rgba(216,183,104,0.12),rgba(10,16,32,0.92))] p-8 shadow-glow">
           <div className="max-w-2xl space-y-4">
             <p className="text-xs uppercase tracking-[0.28em] text-gold">Главная новость</p>
-            <h1 className="text-4xl font-semibold leading-tight text-white">
+            <h1 className="heading-page font-semibold text-white">
               Новостей пока нет
             </h1>
             <p className="text-lg leading-8 text-slate-300">
@@ -44,7 +44,7 @@ export async function HomePage() {
               <span>Главная новость</span>
               <span className="text-mist">{formatDate(hero.publishedAt)}</span>
             </div>
-            <h1 className="max-w-3xl text-5xl font-semibold leading-tight text-white">
+            <h1 className="heading-display max-w-3xl font-semibold text-white">
               {hero.title}
             </h1>
             <p className="max-w-2xl text-lg leading-8 text-slate-300">{hero.excerpt}</p>
@@ -68,7 +68,7 @@ export async function HomePage() {
       <section className="grid gap-6 lg:grid-cols-[1fr_1fr]">
         <div className="rounded-[30px] border border-white/10 bg-white/5 p-6">
           <div className="mb-6 flex items-center justify-between">
-            <h2 className="text-2xl font-semibold text-white">Последние новости</h2>
+            <h2 className="heading-section font-semibold text-white">Последние новости</h2>
             <Link href="/search" className="text-sm text-gold">
               Быстрый поиск
             </Link>
@@ -95,7 +95,7 @@ export async function HomePage() {
       <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="rounded-[30px] border border-white/10 bg-white/5 p-6">
           <div className="mb-6 flex items-center justify-between">
-            <h2 className="text-2xl font-semibold text-white">Новости по категориям</h2>
+            <h2 className="heading-section font-semibold text-white">Новости по категориям</h2>
             <span className="text-sm text-mist">7 редакционных направлений</span>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
@@ -118,7 +118,7 @@ export async function HomePage() {
                     style={{ backgroundColor: category.color }}
                   />
                   <p className="text-sm uppercase tracking-[0.25em] text-mist">{category.name}</p>
-                  <h3 className="mt-3 text-xl font-semibold text-white">
+                  <h3 className="heading-card mt-3 font-semibold text-white">
                     {categoryArticle.title}
                   </h3>
                   <p className="mt-3 text-sm leading-7 text-slate-300">
@@ -132,7 +132,7 @@ export async function HomePage() {
 
         <div className="rounded-[30px] border border-gold/30 bg-[linear-gradient(180deg,rgba(216,183,104,0.12),rgba(255,255,255,0.03))] p-6">
           <p className="text-sm uppercase tracking-[0.35em] text-gold">Рассылка</p>
-          <h2 className="mt-4 text-3xl font-semibold text-white">
+          <h2 className="heading-section mt-4 font-semibold text-white">
             Подписка на ключевую мировую повестку без шумового контента.
           </h2>
           <p className="mt-4 text-sm leading-7 text-slate-300">

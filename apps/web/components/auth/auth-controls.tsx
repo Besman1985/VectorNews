@@ -41,7 +41,7 @@ export function AuthControls() {
     return (
       <Link
         href="/register"
-        className="rounded-full border border-white/10 px-4 py-2 text-sm text-mist transition hover:border-gold hover:text-white"
+        className="rounded-2xl border border-white/10 bg-[#111a2d] px-4 py-2 text-sm text-white transition hover:border-gold hover:text-gold lg:rounded-full lg:bg-transparent lg:text-mist lg:hover:text-white"
       >
         Регистрация
       </Link>
@@ -67,7 +67,7 @@ export function AuthControls() {
         </Link>
         <Link
           href="/register"
-          className="rounded-full bg-gold px-4 py-2 text-sm font-medium text-ink transition hover:bg-sand"
+          className="rounded-2xl border border-white/10 bg-[#111a2d] px-4 py-2 text-sm font-medium text-white transition hover:border-gold hover:text-gold lg:rounded-full lg:border-transparent lg:bg-gold lg:text-ink lg:hover:bg-sand lg:hover:text-ink"
         >
           Регистрация
         </Link>
