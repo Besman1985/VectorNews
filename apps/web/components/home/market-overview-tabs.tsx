@@ -56,6 +56,9 @@ export function MarketOverviewTabs({ overview }: { overview: MarketOverview }) {
             Курсы валют, индексов и криптовалют
           </h2>
         </div>
+        {overview.updatedAt ? (
+          <p className="text-right text-xs text-mist">Обновлено {formatUpdatedAt(overview.updatedAt)}</p>
+        ) : null}
       </div>
 
       <div className="mt-6 flex flex-wrap gap-2">

@@ -197,13 +197,13 @@ export function ArticleBody({ article }: { article: NewsArticle }) {
                 <p className="text-sm uppercase tracking-[0.25em] text-gold">Поделиться</p>
                 <div className="mt-4 grid gap-2 text-sm text-slate-300">
                   <button className="rounded-2xl border border-white/10 px-4 py-3 text-left">
-                    X / Twitter
+                    Поделиться в X / Twitter
                   </button>
                   <button className="rounded-2xl border border-white/10 px-4 py-3 text-left">
-                    LinkedIn
+                    Поделиться в LinkedIn
                   </button>
                   <button className="rounded-2xl border border-white/10 px-4 py-3 text-left">
-                    Telegram
+                    Поделиться в Telegram
                   </button>
                 </div>
               </div>

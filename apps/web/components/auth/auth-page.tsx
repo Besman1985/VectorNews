@@ -22,7 +22,7 @@ function getErrorMessage(error: unknown) {
     return "Пароль должен содержать минимум 6 символов.";
   }
   if (error.message.includes("auth/popup-closed-by-user")) {
-    return "Вход через Google был отменен.";
+    return "Вход через Google был отменён.";
   }
   if (error.message.includes("auth/too-many-requests")) {
     return "Слишком много попыток. Повторите позже.";
@@ -193,7 +193,7 @@ export function AuthPage({ mode }: { mode: AuthMode }) {
           {error ? <p className="mt-4 text-sm text-gold">{error}</p> : null}
 
           <p className="mt-6 text-sm text-mist">
-            {isRegister ? "Уже есть аккаунт?" : "Еще нет аккаунта?"}{" "}
+            {isRegister ? "Уже есть аккаунт?" : "Ещё нет аккаунта?"}{" "}
             <Link href={isRegister ? "/login" : "/register"} className="text-gold">
               {isRegister ? "Войти" : "Зарегистрироваться"}
             </Link>

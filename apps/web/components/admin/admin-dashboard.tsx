@@ -65,9 +65,9 @@ function toPayload(form: ArticleFormState): CreateArticlePayload {
       .filter(Boolean),
     tags: normalizeTags(
       form.tags
-      .split(",")
-      .map((tag) => tag.trim())
-      .filter(Boolean)
+        .split(",")
+        .map((tag) => tag.trim())
+        .filter(Boolean)
     )
   };
 }

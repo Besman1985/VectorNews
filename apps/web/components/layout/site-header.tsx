@@ -88,7 +88,7 @@ export function SiteHeader() {
         <div className="flex items-center justify-between gap-3">
           <BurgerButton
             expanded={isCategoriesOpen}
-            label="Open categories"
+            label="Открыть категории"
             onClick={() => {
               setIsCategoriesOpen((value) => !value);
               setIsMenuOpen(false);
@@ -102,13 +102,13 @@ export function SiteHeader() {
               href="/search"
               className="rounded-full border border-white/10 px-4 py-2 text-sm text-mist transition hover:border-gold hover:text-white"
             >
-              Search
+              Поиск
             </Link>
             <AuthControls />
           </div>
           <BurgerButton
             expanded={isMenuOpen}
-            label="Open menu"
+            label="Открыть меню"
             onClick={() => {
               setIsMenuOpen((value) => !value);
               setIsCategoriesOpen(false);
@@ -145,10 +145,10 @@ export function SiteHeader() {
           }`}
         >
           <div className="mb-5 flex items-center justify-between gap-4">
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-mist">Categories</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-mist">Категории</span>
             <button
               type="button"
-              aria-label="Close categories"
+              aria-label="Закрыть категории"
               onClick={() => setIsCategoriesOpen(false)}
               className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white transition hover:border-gold hover:text-gold"
             >
@@ -156,7 +156,7 @@ export function SiteHeader() {
             </button>
           </div>
           <div className="rounded-3xl border border-white/10 bg-white/5 p-3">
-            <p className="mb-3 text-sm text-white">Browse news by topic</p>
+            <p className="mb-3 text-sm text-white">Просматривайте новости по темам</p>
             <nav className="flex max-h-[calc(100vh-10rem)] flex-col gap-2 overflow-y-auto text-sm text-mist">
               {categories.map((category) => (
                 <Link
@@ -179,10 +179,10 @@ export function SiteHeader() {
           }`}
         >
           <div className="mb-5 flex items-center justify-between gap-4">
-            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-mist">Menu</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.3em] text-mist">Меню</span>
             <button
               type="button"
-              aria-label="Close menu"
+              aria-label="Закрыть меню"
               onClick={() => setIsMenuOpen(false)}
               className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white transition hover:border-gold hover:text-gold"
             >
@@ -190,19 +190,19 @@ export function SiteHeader() {
             </button>
           </div>
           <div className="rounded-3xl border border-white/10 bg-white/5 p-3">
-            <p className="mb-3 text-sm text-white">Quick access</p>
+            <p className="mb-3 text-sm text-white">Быстрый доступ</p>
             <div className="flex flex-col gap-2">
               <Link
                 href="/"
                 className="rounded-2xl border border-white/10 bg-[#111a2d] px-4 py-3 text-sm text-white transition hover:border-gold hover:text-gold"
               >
-                Home
+                Главная
               </Link>
               <Link
                 href="/search"
                 className="rounded-2xl border border-white/10 bg-[#111a2d] px-4 py-3 text-sm text-white transition hover:border-gold hover:text-gold"
               >
-                Search
+                Поиск
               </Link>
             </div>
           </div>

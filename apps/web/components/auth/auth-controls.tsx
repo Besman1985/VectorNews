@@ -8,7 +8,7 @@ import { useAuth } from "@/contexts/auth-context";
 function getErrorMessage(error: unknown) {
   if (error instanceof Error && error.message) {
     if (error.message.includes("auth/configuration-not-found")) {
-      return "Аутентификация Firebase еще не настроена.";
+      return "Аутентификация Firebase ещё не настроена.";
     }
     return error.message;
   }
@@ -61,7 +61,7 @@ export function AuthControls() {
       <div className="flex items-center gap-2">
         <Link
           href="/login"
-          className="rounded-full border border-white/10 px-4 py-2 text-sm text-white transition hover:border-gold hover:text-gold"
+          className="rounded-2xl border border-white/10 bg-[#111a2d] px-4 py-2 text-sm text-white transition hover:border-gold hover:text-gold lg:rounded-full lg:bg-transparent"
         >
           Вход
         </Link>
