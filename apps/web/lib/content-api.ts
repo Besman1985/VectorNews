@@ -10,8 +10,24 @@ import {
   getDashboardMetrics,
   type AuthorProfile
 } from "./store";
+import { getEditorChoiceSlugs } from "./editor-choice";
 
 const apiBaseUrl = process.env.API_URL ?? process.env.NEXT_PUBLIC_API_URL;
+
+function resolveEditorPicks(articles: NewsArticle[], slugs: string[]) {
+  if (slugs.length > 0) {
+    const articlesBySlug = new Map(articles.map((article) => [article.slug, article]));
+    const resolved = slugs
+      .map((slug) => articlesBySlug.get(slug))
+      .filter((article): article is NewsArticle => Boolean(article));
+
+    if (resolved.length > 0) {
+      return resolved.slice(0, 3);
+    }
+  }
+
+  return articles.filter((article) => article.editorPick).slice(0, 3);
+}
 
 async function fetchJson<T>(path: string, init?: RequestInit): Promise<T> {
   if (!apiBaseUrl) {
@@ -38,20 +54,31 @@ async function fetchJson<T>(path: string, init?: RequestInit): Promise<T> {
 
 export async function getHomepageFeed() {
   try {
-    return await fetchJson<{
+    const feed = await fetchJson<{
       hero: NewsArticle | null;
       latest: NewsArticle[];
       popular: NewsArticle[];
       editorPicks: NewsArticle[];
       categories: Category[];
     }>("/api/v1/feed");
+
+    if (feed.editorPicks.length > 0) {
+      return feed;
+    }
+
+    const articles = await getArticles();
+    return {
+      ...feed,
+      editorPicks: resolveEditorPicks(articles, await getEditorChoiceSlugs())
+    };
   } catch {
     const articles = getAllArticles();
+    const editorChoiceSlugs = await getEditorChoiceSlugs();
     return {
       hero: articles.find((article) => article.featured) ?? articles[0] ?? null,
       latest: [...articles].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt)).slice(0, 4),
       popular: articles.filter((article) => article.popular).slice(0, 3),
-      editorPicks: articles.filter((article) => article.editorPick).slice(0, 3),
+      editorPicks: resolveEditorPicks(articles, editorChoiceSlugs),
       categories: seedCategories
     };
   }

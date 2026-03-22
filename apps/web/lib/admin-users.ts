@@ -14,7 +14,7 @@ export interface FirestoreAdminUser {
 const collectionName = process.env.FIRESTORE_ADMIN_COLLECTION ?? "admin_users";
 
 export async function getAdminUserByEmail(email: string) {
-  const snapshot = await getAdminDb()
+  const snapshot = await (await getAdminDb())
     .collection(collectionName)
     .where("email", "==", email.toLowerCase())
     .limit(1)

@@ -12,7 +12,7 @@ export async function POST(request: NextRequest) {
   }
 
   try {
-    const decodedToken = await getAdminAuth().verifyIdToken(idToken);
+    const decodedToken = await (await getAdminAuth()).verifyIdToken(idToken);
     const token = await signUserSessionToken({
       uid: decodedToken.uid,
       email: decodedToken.email ?? "",
