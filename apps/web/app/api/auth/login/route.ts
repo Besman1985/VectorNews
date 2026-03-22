@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { signAdminToken } from "@/lib/auth";
 import { validateAdminCredentials } from "@/lib/admin-users";
 import { adminCookieName } from "@/lib/auth-shared";
+import { shouldUseSecureCookies } from "@/lib/cookie-options";
 
 export async function POST(request: NextRequest) {
   const { email, password } = await request.json();
@@ -16,7 +17,7 @@ export async function POST(request: NextRequest) {
   response.cookies.set(adminCookieName, token, {
     httpOnly: true,
     sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
+    secure: shouldUseSecureCookies(request),
     path: "/",
     maxAge: 60 * 60 * 12
   });

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getAdminAuth } from "@/lib/firebase-admin";
 import { userCookieName } from "@/lib/auth-shared";
 import { signUserSessionToken } from "@/lib/user-session";
+import { shouldUseSecureCookies } from "@/lib/cookie-options";
 
 export async function POST(request: NextRequest) {
   const { idToken } = (await request.json()) as { idToken?: string };
@@ -24,7 +25,7 @@ export async function POST(request: NextRequest) {
     response.cookies.set(userCookieName, token, {
       httpOnly: true,
       sameSite: "lax",
-      secure: process.env.NODE_ENV === "production",
+      secure: shouldUseSecureCookies(request),
       path: "/",
       maxAge: 60 * 60 * 24 * 7
     });
@@ -34,12 +35,12 @@ export async function POST(request: NextRequest) {
   }
 }
 
-export async function DELETE() {
+export async function DELETE(request: NextRequest) {
   const response = NextResponse.json({ ok: true });
   response.cookies.set(userCookieName, "", {
     httpOnly: true,
     sameSite: "lax",
-    secure: process.env.NODE_ENV === "production",
+    secure: shouldUseSecureCookies(request),
     path: "/",
     maxAge: 0
   });
