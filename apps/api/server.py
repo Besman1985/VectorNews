@@ -422,25 +422,27 @@ class Repository:
     def _seed_database(self) -> None:
         cursor = self.database.cursor(dictionary=True)
         try:
-            cursor.execute("SELECT COUNT(*) AS total FROM categories")
-            if int(cursor.fetchone()["total"]) == 0:
-                category_rows = [
-                    (
-                        str(category["id"]),
-                        category["name"],
-                        category["slug"],
-                        category["description"],
-                        category["color"],
-                    )
-                    for category in self.seed_categories
-                ]
-                cursor.executemany(
-                    """
-                    INSERT INTO categories (id, name, slug, description, color)
-                    VALUES (%s, %s, %s, %s, %s)
-                    """,
-                    category_rows,
+            category_rows = [
+                (
+                    str(category["id"]),
+                    category["name"],
+                    category["slug"],
+                    category["description"],
+                    category["color"],
                 )
+                for category in self.seed_categories
+            ]
+            cursor.executemany(
+                """
+                INSERT INTO categories (id, name, slug, description, color)
+                VALUES (%s, %s, %s, %s, %s)
+                ON DUPLICATE KEY UPDATE
+                    name = VALUES(name),
+                    description = VALUES(description),
+                    color = VALUES(color)
+                """,
+                category_rows,
+            )
         finally:
             cursor.close()
 

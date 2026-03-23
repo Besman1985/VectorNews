@@ -71,22 +71,17 @@ async function ensureSchema(nextPool: Pool) {
 }
 
 async function seedDatabase(nextPool: Pool) {
-  const [[categoryCount]] = await nextPool.query<any[]>("SELECT COUNT(*) AS total FROM categories");
-  if (Number(categoryCount.total) === 0) {
+  for (const category of seedCategories) {
     await nextPool.query(
       `
       INSERT INTO categories (id, name, slug, description, color)
-      VALUES ?
+      VALUES (?, ?, ?, ?, ?)
+      ON DUPLICATE KEY UPDATE
+        name = VALUES(name),
+        description = VALUES(description),
+        color = VALUES(color)
       `,
-      [
-        seedCategories.map((category) => [
-          String(category.id),
-          category.name,
-          category.slug,
-          category.description,
-          category.color
-        ])
-      ]
+      [String(category.id), category.name, category.slug, category.description, category.color]
     );
   }
 }

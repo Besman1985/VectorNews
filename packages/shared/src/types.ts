@@ -5,7 +5,8 @@ export type CategorySlug =
   | "economy"
   | "business"
   | "sport"
-  | "science";
+  | "science"
+  | "crypto";
 
 export interface Category {
   id: string;

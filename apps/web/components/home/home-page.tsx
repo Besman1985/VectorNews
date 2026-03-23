@@ -98,7 +98,7 @@ export async function HomePage() {
             <h2 className="heading-section font-semibold text-white">Новости по категориям</h2>
             <span className="text-sm text-mist">7 редакционных направлений</span>
           </div>
-          <div className="grid gap-4 md:grid-cols-2">
+          <div className="flex gap-4 overflow-x-auto pb-2">
             {categories.map((category) => {
               const categoryArticle = categoryArticles.find(
                 (article) => article.category === category.slug
@@ -111,7 +111,7 @@ export async function HomePage() {
                 <Link
                   key={category.id}
                   href={`/category/${category.slug}`}
-                  className="rounded-[24px] border border-white/10 bg-[#0f172a] p-5 transition hover:border-gold/60 hover:bg-white/10"
+                  className="min-w-[calc((100%-1rem)/2)] rounded-[24px] border border-white/10 bg-[#0f172a] p-5 transition hover:border-gold/60 hover:bg-white/10"
                 >
                   <div
                     className="mb-4 h-1.5 w-24 rounded-full"

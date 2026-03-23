@@ -49,6 +49,14 @@ export const categories: Category[] = [
     slug: "science",
     description: "Исследования, открытия и научные прорывы.",
     color: "#b0a3ff"
+  },
+  {
+    id: "cat-crypto",
+    name: "\u041a\u0440\u0438\u043f\u0442\u043e",
+    slug: "crypto",
+    description:
+      "\u041a\u0440\u0438\u043f\u0442\u043e\u0432\u0430\u043b\u044e\u0442\u044b, \u0431\u043b\u043e\u043a\u0447\u0435\u0439\u043d, \u0442\u043e\u043a\u0435\u043d\u044b \u0438 \u0434\u0432\u0438\u0436\u0435\u043d\u0438\u0435 \u0446\u0438\u0444\u0440\u043e\u0432\u044b\u0445 \u0430\u043a\u0442\u0438\u0432\u043e\u0432.",
+    color: "#f59e0b"
   }
 ];
 
