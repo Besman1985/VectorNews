@@ -94,11 +94,11 @@ export async function HomePage() {
 
       <section className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="rounded-[30px] border border-white/10 bg-white/5 p-6">
-          <div className="mb-6 flex items-center justify-between">
+          <div className="mb-6 flex flex-col items-start gap-2 sm:flex-row sm:items-center sm:justify-between">
             <h2 className="heading-section font-semibold text-white">Новости по категориям</h2>
-            <span className="text-sm text-mist">7 редакционных направлений</span>
+            <span className="text-sm text-mist">8 редакционных направлений</span>
           </div>
-          <div className="flex gap-4 overflow-x-auto pb-2">
+          <div className="grid max-h-[calc(2*15rem+1rem)] gap-4 overflow-y-auto pr-1 snap-y snap-mandatory sm:max-h-none sm:overflow-visible sm:pr-0 sm:snap-none lg:grid-flow-col lg:auto-cols-[calc((100%-1rem)/2)] lg:grid-rows-1 lg:overflow-x-auto lg:overflow-y-hidden lg:pb-2">
             {categories.map((category) => {
               const categoryArticle = categoryArticles.find(
                 (article) => article.category === category.slug
@@ -111,7 +111,7 @@ export async function HomePage() {
                 <Link
                   key={category.id}
                   href={`/category/${category.slug}`}
-                  className="min-w-[calc((100%-1rem)/2)] rounded-[24px] border border-white/10 bg-[#0f172a] p-5 transition hover:border-gold/60 hover:bg-white/10"
+                  className="h-full min-h-[15rem] snap-start rounded-[24px] border border-white/10 bg-[#0f172a] p-5 transition hover:border-gold/60 hover:bg-white/10 sm:min-h-0 lg:min-w-0"
                 >
                   <div
                     className="mb-4 h-1.5 w-24 rounded-full"
@@ -138,15 +138,15 @@ export async function HomePage() {
           <p className="mt-4 text-sm leading-7 text-slate-300">
             Ежедневная подборка редакции, аналитика по рынкам и самые сильные лонгриды.
           </p>
-          <form className="mt-8 space-y-3">
+          <form className="mt-8 space-y-3 sm:flex sm:items-start sm:gap-3 sm:space-y-0">
             <input
               type="email"
               placeholder="Адрес эл. почты"
-              className="w-full rounded-2xl border border-white/10 bg-[#0c1324] px-4 py-3 text-white outline-none transition focus:border-gold"
+              className="w-full rounded-2xl border border-white/10 bg-[#0c1324] px-4 py-3 text-white outline-none transition focus:border-gold sm:flex-1"
             />
             <button
               type="submit"
-              className="w-full rounded-2xl bg-gold px-4 py-3 font-medium text-ink transition hover:bg-sand"
+              className="w-full rounded-2xl bg-gold px-4 py-3 font-medium text-ink transition hover:bg-sand sm:w-auto sm:px-6"
             >
               Подписаться
             </button>
