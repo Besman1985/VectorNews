@@ -56,12 +56,9 @@ export function MarketOverviewTabs({ overview }: { overview: MarketOverview }) {
             Курсы валют, индексов и криптовалют
           </h2>
         </div>
-        {overview.updatedAt ? (
-          <p className="text-right text-xs text-mist">Обновлено {formatUpdatedAt(overview.updatedAt)}</p>
-        ) : null}
       </div>
 
-      <div className="mt-6 flex flex-wrap gap-2">
+      <div className="mt-6 grid grid-cols-3 gap-2 sm:flex sm:flex-wrap">
         {tabs.map((tab) => {
           const active = tab.key === activeTab;
 
@@ -70,7 +67,7 @@ export function MarketOverviewTabs({ overview }: { overview: MarketOverview }) {
               key={tab.key}
               type="button"
               onClick={() => setActiveTab(tab.key)}
-              className={`rounded-full border px-4 py-2 text-sm transition ${
+              className={`min-w-0 whitespace-nowrap rounded-full border px-2 py-2 text-center text-[clamp(0.625rem,2.7vw,0.875rem)] transition sm:px-4 sm:text-sm ${
                 active
                   ? "border-gold bg-gold text-ink"
                   : "border-white/10 bg-white/5 text-mist hover:border-gold/40 hover:text-white"
@@ -93,7 +90,7 @@ export function MarketOverviewTabs({ overview }: { overview: MarketOverview }) {
               className="grid grid-cols-[1fr_auto] items-center gap-3 rounded-[22px] border border-white/10 bg-white/[0.04] px-4 py-3"
             >
               <div>
-                <p className="text-sm font-medium text-white">{item.name}</p>
+                <p className="text-xs font-medium text-white sm:text-sm">{item.name}</p>
                 <p className="mt-1 text-xs uppercase tracking-[0.22em] text-mist">{item.symbol}</p>
               </div>
               <div className="text-right">
